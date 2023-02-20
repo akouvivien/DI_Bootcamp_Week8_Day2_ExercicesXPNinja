@@ -10,8 +10,6 @@ LIMIT 2;
 DELETE FROM purchases
 WHERE purchases.customer_id = (SELECT customers.id FROM customers WHERE customers.nom = 'Scott')
 
-![ninja req2](https://user-images.githubusercontent.com/47045013/219900782-66e0fdee-3e13-4738-b07b-b9d63ed6f6c4.png)
-
 
 -- 3) Does Scott still exist in the customers table, 
 	-- even though he has been deleted? Try and find him.
@@ -27,7 +25,6 @@ SELECT purchases.*, customers.nom, customers.prenom
 FROM purchases
 RIGHT JOIN customers ON customers.id = purchases.customer_id;
 
-![ninja req4](https://user-images.githubusercontent.com/47045013/219900888-19d406f5-ed66-4db0-9953-d55420bf9808.png)
 
 
 /*
@@ -38,4 +35,3 @@ SELECT purchases.*, customers.nom, customers.prenom
 FROM purchases
 INNER JOIN customers ON customers.id = purchases.customer_id;
 
-![ninja req5](https://user-images.githubusercontent.com/47045013/219900898-8ce80d75-bc3f-45e5-a3af-f422359aa219.png)
